@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+/* Global style */
+body {
+    background-color:beige;
+    font-family: 'Audiowide', cursive;
+    color:black;
+}
+/* Game-Tytle layout */
+#title-area {
+    font-family: 'Audiowide', cursive;
+    color:brown;
+    text-align: center;
+}
+/* Game-Arena layout */
+#arena-area {
+    background-color:aquamarine;
+    box-sizing: border-box;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    color:brown;
+    text-align: center;
+
+}
+/* Game-Rules layout */
+#rules-area{
+    background-color:beige;
+
+}
