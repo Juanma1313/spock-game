@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-/* modifyers */
+/* Global styles */
+html {
+    font-family: 'Audiowide', cursive;
+    color:black;
+    max-width:80vw;
+}
+
 .center {
     margin:auto;
 }
@@ -15,6 +21,22 @@
     width:50%;
     box-sizing:border-box;
 }
+.court {
+    width:50%;
+    box-sizing:border-box;    
+}
+
+.weapons { 
+    width:20%;
+    border-width: medium;
+    box-sizing:border-box;    
+}
+.chosen-weapon {
+    width:80%;
+    border-width: medium;
+    box-sizing:border-box;    
+}
+
 .player-colors {
     border-color: red;
     background-color: #ffd7d7 ;
@@ -38,13 +60,8 @@
     border-style: solid;
 }
 
-/* Global style */
-html {
-    font-family: 'Audiowide', cursive;
-    color:black;
-    max-width:80vw;
-}
-/* Game-Tytle layout */
+/******
+ Game-Title layout */
 #title-area {
     background-color:dodgerblue;
     font-size: xx-large;
@@ -56,22 +73,21 @@ html {
     padding:0;
     height:10vh;
 }
-
 #title-area.h1{
     margin:0;
 }
-/* Game-Arena layout  */
-#arena-area {
-}
-/* Information pannel layout */
+
+/******
+ Information pannel layout */
 #pannel {
     background-color:dodgerblue;
 }
 #score{
+    font-size: large;
+    font-weight: bold;
     height: 2em;
     border:0;
 }
-
 #round{
     display: inline-block;
     margin:auto;
@@ -96,8 +112,39 @@ html {
     color:yellow;
     border:0;
 }
+/*****
+ Game arena layout */
+ #arena-area img {  /* Fit all images in its parent space */
+    width:90%; 
+    margin: auto;
+    display: block;   
+}
+
+
+ /* Player court */
 #area-player {
-    border: thick solid red;
+    float:left;
+}
+#player-weapons{
+    float:left;
+}
+#player-weapon{
+    margin:auto;
+    float:right;
+}
+/* Computer court */
+
+#area-computer {
+    float:right;
+}
+#area-computer img {
+    transform: scaleX(-1);
+}
+#computer-weapons{
+    float:right;
+}
+#computer-weapon{
+    float:left;
 }
 
 /* Game-Rules layout */

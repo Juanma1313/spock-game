@@ -12,49 +12,65 @@
     <header id="title-area" class="main-box pannel-border-color">
         <h1 class="center">Spock-Game</h1>
     </header>
-    <section id="arena-area">
-        <div id="pannel" class="main-box pannel-border-color">   <!--Area for info -->
-            <div id="score" class="main-box"> <!-- Here we locate the players names, scores, round number-->
-                <!-- round number-->
-                <div id="round" class="round-info">Round - <span id="round-number">0</span></div>   
-                <!-- player info-->
-                <div  id="player-name" class="player-info">
+    
+    <section id="arena-area">   <!-- Game area-->
+        <div id="pannel" class="main-box pannel-border-color">   <!-- information pannel -->
+            <div id="score" class="main-box"> <!-- players names, scores, round number-->
+                <div id="round" class="round-info">Round - <span id="round-number">0</span></div>   <!-- round number-->
+                <div  id="player-name" class="player-info"> <!-- Player information (name, score) -->
                     Player
                     <div id="player-score" class="score-box player-colors">0</div>
                 </div>   
-                <!-- computer info-->
-                <div id="computer-name" class="player-info">
+                <div id="computer-name" class="player-info">    <!-- Computer information (name, score) -->
                     Spock
                     <div id="computer-score" class="score-box computer-colors">0</div>
                 </div>   
             </div>
-             <!-- game results for each round and other messages to the player-->
-            <div id="result" >  
+            <div id="result" >  <!-- game results for each round and other messages to the player-->
                 Outcome Message
             </div>
-        
         </div>
-        <div id="area-player" class="main-box player-colors">  <!--Area for player -->
-            <div id="player-weapons">    <!-- buttons for weapons-->
-                <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
-                <img src="assets/images/jmh-paper_l.png" alt="[paper_small]">
-                <img src="assets/images/jmh-scissors_l.png" alt="[scissors_small]">
-                <img src="assets/images/jmh-paper_l.png" alt="[lizard_small]">
-                <img src="assets/images/jmh-spock_l.png" alt="[spock_small]">
+        <div id="area-player" class="main-box player-colors court">  <!-- Player court -->
+            <div id="player-weapons" class="weapons">    <!-- player's buttons for weapons-->
+                <button aria-label="Player Rock button"  id="btn-p-rock">
+                    <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
+                </button>
+                <button aria-label="Player Paper button"  id="btn-p-paper">
+                    <img src="assets/images/jmh-paper_l.png" alt="[paper_small]">
+                </button>
+                <button aria-label="Player Scissors button"  id="btn-p-scissors">
+                    <img src="assets/images/jmh-scissors_l.png" alt="[scissors_small]">
+                </button>
+                <button aria-label="Player lizard button"  id="btn-p-lizard">
+                    <img src="assets/images/jmh-lizard_l.png" alt="[lizard_small]">
+                </button>
+                <button aria-label="Player spock button"  id="btn-p-spock">
+                    <img src="assets/images/jmh-spock_l.png" alt="[spock_small]">
+                </button>
             </div>
-            <div id="player-weapon">    <!-- used weapon-->
+            <div id="player-weapon" class="chosen-weapon">    <!-- player choosen weapon-->
                 <img src="assets/images/jmh-rock.png" alt="[rock-paper-scissors-lizard-spock_selection]">
             </div>
         </div>
-        <div id="area-computer" class="main-box computer-colors">  <!--Area for computer -->
-            <div id="computer-weapons">    <!-- buttons for weapons-->
-                <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
-                <img src="assets/images/jmh-paper_l.png" alt="[paper_small]">
-                <img src="assets/images/jmh-scissors_l.png" alt="[scissors_small]">
-                <img src="assets/images/jmh-paper_l.png" alt="[lizard_small]">
-                <img src="assets/images/jmh-spock_l.png" alt="[spock_small]">
+        <div id="area-computer" class="main-box computer-colors court">  <!-- Computer court-->
+            <div id="computer-weapons" class="weapons">    <!-- computer's buttons for weapons-->
+                <button aria-label="computer rock button"  id="btn-c-rock" disabled>
+                    <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
+                </button>
+                <button aria-label="computer paper button"  id="btn-c-paper" disabled>
+                    <img src="assets/images/jmh-paper_l.png" alt="[paper_small]">
+                </button>
+                <button aria-label="computer scissors button"  id="btn-c-scissors" disabled>
+                    <img src="assets/images/jmh-scissors_l.png" alt="[scissors_small]">
+                </button>
+                <button aria-label="computer lizard button"  id="btn-c-lizard" disabled>
+                    <img src="assets/images/jmh-lizard_l.png" alt="[lizard_small]">
+                </button>
+                <button aria-label="computer spock button"  id="btn-c-spock" disabled>
+                    <img src="assets/images/jmh-spock_l.png" alt="[spock_small]">
+                </button>
             </div>
-            <div id="computer-weapon">    <!-- used weapon-->
+            <div id="computer-weapon" class="chosen-weapon">    <!-- computer choosen weapon -->
                 <img src="assets/images/jmh-rock.png" alt="[rock-paper-scissors-lizard-spock_selection]">
             </div>
         </div>
