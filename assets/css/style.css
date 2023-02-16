@@ -93,13 +93,13 @@ html {
     margin:auto;
     border-bottom: 0;
 }
-#player-name{
+#player-info{
     display: inline-block;
     float:left;
     border:0;
     
 }
-#computer-name{
+#computer-info{
     display: inline-block;
     float:right;    
     right: 0;    
@@ -119,8 +119,6 @@ html {
     margin: auto;
     display: block;   
 }
-
-
  /* Player court */
 #area-player {
     float:left;
