@@ -4,6 +4,17 @@
 .center {
     margin:auto;
 }
+.player-info {
+    width:25%;
+    box-sizing:border-box;
+    background-color: #dee6ef;
+    text-align:center;
+}
+.round-info {
+    text-align:center;
+    width:50%;
+    box-sizing:border-box;
+}
 .player-colors {
     border-color: red;
     background-color: #ffd7d7 ;
@@ -12,7 +23,17 @@
     border-color: green;
     background-color:#dde8cb;
 }
+.pannel-border-color {
+    border-color: blue;
+}
 .main-box {
+    border-width: thick;    
+    border-style: solid;
+}
+.score-box {
+    width:2em;
+    text-align:center;
+    float:right;
     border-width: thick;    
     border-style: solid;
 }
@@ -26,13 +47,10 @@ html {
 /* Game-Tytle layout */
 #title-area {
     background-color:dodgerblue;
-    font-family: 'Audiowide', cursive;
     font-size: xx-large;
     color:yellow;
     text-align: center;
     vertical-align: middle;
-    border-width:thick;
-    border-style: solid;
     border-bottom: 0;
     border-color: blue;
     padding:0;
@@ -48,7 +66,35 @@ html {
 /* Information pannel layout */
 #pannel {
     background-color:dodgerblue;
-    /*border: thick solid blue;*/
+}
+#score{
+    height: 2em;
+    border:0;
+}
+
+#round{
+    display: inline-block;
+    margin:auto;
+    border-bottom: 0;
+}
+#player-name{
+    display: inline-block;
+    float:left;
+    border:0;
+    
+}
+#computer-name{
+    display: inline-block;
+    float:right;    
+    right: 0;    
+    border:0;
+}
+#result {
+    font-size: large;
+    text-align: center;
+    background-color: blue;
+    color:yellow;
+    border:0;
 }
 #area-player {
     border: thick solid red;

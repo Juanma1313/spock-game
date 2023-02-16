@@ -9,25 +9,27 @@
     <title>Spock-Game</title>
 </head>
 <body>
-    <header id="title-area" class="main-box">
+    <header id="title-area" class="main-box pannel-border-color">
         <h1 class="center">Spock-Game</h1>
     </header>
     <section id="arena-area">
-        <div id="pannel" class="main-box">   <!--Area for info -->
-            <div class="score" class="main-box"> <!-- Here we locate the players names, scores, round number-->
+        <div id="pannel" class="main-box pannel-border-color">   <!--Area for info -->
+            <div id="score" class="main-box"> <!-- Here we locate the players names, scores, round number-->
                 <!-- round number-->
-                <div id="round">round:<span id="round_number">0</span></div>   
+                <div id="round" class="round-info">Round - <span id="round-number">0</span></div>   
                 <!-- player info-->
-                <div id="player_name" class="main-box">Player    
-                    <div id="player_score">0</div>
+                <div  id="player-name" class="player-info">
+                    Player
+                    <div id="player-score" class="score-box player-colors">0</div>
                 </div>   
                 <!-- computer info-->
-                <div id="computer_name" class="main-box">Spock
-                    <div id="computer_score">0</div>
+                <div id="computer-name" class="player-info">
+                    Spock
+                    <div id="computer-score" class="score-box computer-colors">0</div>
                 </div>   
             </div>
              <!-- game results for each round and other messages to the player-->
-            <div id="result">  
+            <div id="result" >  
                 Outcome Message
             </div>
         
@@ -45,7 +47,7 @@
             </div>
         </div>
         <div id="area-computer" class="main-box computer-colors">  <!--Area for computer -->
-            <div id="computer_weapons">    <!-- buttons for weapons-->
+            <div id="computer-weapons">    <!-- buttons for weapons-->
                 <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
                 <img src="assets/images/jmh-paper_l.png" alt="[paper_small]">
                 <img src="assets/images/jmh-scissors_l.png" alt="[scissors_small]">
