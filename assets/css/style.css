@@ -1,17 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* modifyers */
+.center {
+    margin:auto;
+}
+
+
 /* Global style */
-body {
-    background-color:beige;
+html {
     font-family: 'Audiowide', cursive;
     color:black;
+    max-width:80vw;
 }
 /* Game-Tytle layout */
 #title-area {
+    background-color:dodgerblue;
     font-family: 'Audiowide', cursive;
-    color:brown;
+    font-size: xx-large;
+    color:yellow;
     text-align: center;
+    vertical-align: middle;
+    border-width:thick;
+    border-style: solid;
+    border-bottom: 0;
+    border-color: blue;
+    padding:0;
+    height:10vh;
 }
-/* Game-Arena layout */
+
+#title-area.h1{
+    margin:0;
+}
+/* Game-Arena layout 
 #arena-area {
     background-color:aquamarine;
     box-sizing: border-box;
@@ -22,7 +42,12 @@ body {
     color:brown;
     text-align: center;
 
+}*/
+/* Information pannel layout */
+#pannel {
+    background-color:dodgerblue;
 }
+
 /* Game-Rules layout */
 #rules-area{
     background-color:beige;
