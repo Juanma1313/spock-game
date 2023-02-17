@@ -86,6 +86,79 @@ The proposed wireframe for mobile is shown below.
 
 ![wireframe for mobiles](doc/wireframe/mobile_page.png)
 
+#Features
+## Existing Features
+### The Titel
+This is just a banner with the name of the game.
+
+### Game Rules
+The first thing the user sees is a window with the game rules and a list of the 10 winning combinations, So the user can take a time to understand the game or simply discard the screen pressing the "Back to the game" button
+ ![screenshot game rules](doc/screenshots/capture-1.png)
+
+### The start button
+The user must press the start button to initiate the game.
+
+![screenshot game rules](doc/screenshots/capture-2.png)
+
+### Game screen
+Once the user has press the start button, all the scores are set to 0, the previously selected weapon is deleted and the round counter shows the current round number. The user can access the game rules pressing the rules button located at the bottom of the gaming area.
+The user arena is marked with red colors, while the computer named "Spock" uses green colors. All the rest of the commin information is presented in blue.
+
+![screenshot game rules](doc/screenshots/capture-3.png)
+
+### The weapon draw
+The user can select any of the 5 hand postures that are presented at the left of his arena. Once he has clicked on it, it will triguer the weapon draw and both weapons will be displayed on their respectives arenas.
+The result of the draw is also presented inmediately, the scores are updated acordingly and the round counter is increased by one.
+This will be repeated for 5 times until the round 5 us comnplated in which case the final result will be presented.
+
+![screenshot game rules](doc/screenshots/capture-4.png)
+
+### The final screem
+After evaluating the scores after the 5th weapon draw, the final screen will be presented with the outcome of the duell. There are 3 possible scenarions. The player can win, he can loose or even tie with the computer. there is specific final message for each case.
+
+![screenshot final screen won](doc/screenshots/capture-5.png)
+
+![screenshot final screen lost](doc/screenshots/capture-6.png)
+
+![screenshot final screen draw](doc/screenshots/capture-7.png)
+
+### Screen adaptation to diferent devices
+The application was developed in a desktop environment, but it can adapt to a smaller screen device with resolutions lower then 1024 horizontal px.
+The font is scaled automatically as we reduce the screen size, and when used in lower than 1024px the screen is restructured to provide a better usability.
+
+![screenshot mobile](doc/screenshots/capture-8.png)
+
+***
+
+# Testing
+## Validator Testing
+### HTML
+No errors are returned when passing through the official W3C validator
+### CSS
+No errors are found when passing through the official (Jigsaw) validator
+### Javascript
+No errors are found when passing through the official (JSHint) validator
+
+## Performance
+Only the Google Chromium Lighthouse performance test was performed on the deployed application. the following screen capture shows the result.
+
+![screenshot mobile](doc/screenshots/lighthouse-test.png)
+
+# Deployment
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+From the source section drop-down menu, select the Master Branch
+Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The live link can be found here - https://juanma1313.github.io/spock-game/
+
+
+
+
+
+
+
+
+
 # Credits
 ## Information and references
 * Rock-Paper-Scissors-Lizard-Spock game information was obtained from Wikipedia [Wikikedia_reference](https://en.wikipedia.org/wiki/Rock_paper_scissors)
