@@ -64,17 +64,19 @@ html {
  Game-Title layout */
 #title-area {
     background-color:dodgerblue;
-    font-size: xx-large;
+    /*font-size: x-large;*/
     color:yellow;
     text-align: center;
     vertical-align: middle;
     border-bottom: 0;
     border-color: blue;
     padding:0;
-    height:10vh;
+    /*height:10vh;*/
 }
-#title-area.h1{
+#title-area > h1{
     margin:0;
+    width:100;
+    font-size: 5vw;
 }
 
 /******
@@ -83,7 +85,7 @@ html {
     background-color:dodgerblue;
 }
 #score{
-    font-size: large;
+    font-size: 3vw;
     font-weight: bold;
     height: 2em;
     border:0;
@@ -106,7 +108,7 @@ html {
     border:0;
 }
 #result {
-    font-size: large;
+    font-size: 3vw;
     text-align: center;
     background-color: blue;
     color:yellow;
@@ -145,8 +147,115 @@ html {
     float:left;
 }
 
+/****
+  footer */
+#btn-open-rules{
+    position:relative;
+    bottom: 0;
+    font-family: 'Audiowide', cursive;
+    font-size: 3vw;
+    width:100%;
+    height: 4vw;
+
+}
+
 /* Game-Rules layout */
 #rules-area{
     background-color:beige;
-
+    position:fixed;
+    height:60%;
+    margin:auto;
+    font-size: 1vw;
+    font-weight: normal;
+    width:79%;
+    left: 10vw;
+    top: 7vh;
 }
+#rules-area > h2{
+    text-align: center;
+}
+#btn-close-rules{
+    position:absolute;
+    bottom: 0;
+    font-family: 'Audiowide', cursive;
+    font-size: 3vw;
+    width:100%;
+    height: 4vw;
+}
+#combinations{
+    text-align: center;
+}
+#combinations li{
+    list-style-type: none;
+    }
+
+/*****
+ Start button layout */
+ #start {
+    background-color:beige;
+    position:fixed;
+    height:10%;
+    margin:auto;
+    width:15%;
+    left: 45vw;
+    text-align: center;
+ }
+ #btn-start {
+    width: 100%;
+    height: 100%;
+    font-family: 'Audiowide', cursive;
+    font-size: 3vw;
+    font-weight: bold;
+ }
+
+ /********
+ End game screen layout */
+ 
+ #end {
+    font-size: 3vw;
+    background-color: beige;
+    position: fixed;
+    height: 15%;
+    margin: auto;
+    width: 30%;
+    left: 35vw;
+    text-align: center;
+ }
+ #btn-end {
+    width: 100%;
+    height: 50%;
+    font-family: 'Audiowide', cursive;
+    font-size: 3vw;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;    
+ }
+
+ /*media query for screen up to 1024px wide*/
+
+ @media screen and (max-width: 1024px){
+    /* Game-Rules layout */
+    #rules-area{
+        font-size: 2vw;
+    }
+    #round{ 
+        display: block;
+    }
+    .player-info {
+        width:50%;
+    }
+    .court {
+        width:100%;
+    }
+    
+
+ /* media query for mobile under 550 px wide*/ 
+
+ @media screen and (max-width: 550px){
+        /* Game-Rules layout */
+        #rules-area{
+            font-size: 3vw;
+        }
+    
+ }
