@@ -60,6 +60,14 @@ const outcomeReasons = [
 // Messages to be displayed at the end of the game.
 const finalMessages = ["Sorry!, You Lost","Wow!, You Tied", "Congratulations!, You Have Won!"]
 
+document.getElementById("end").style.visibility='hidden';         // hide the final window
+document.getElementById("start").style.visibility='visible';      // show the start window
+document.getElementById("btn-open-rules").style.visibility='hidden';   
+document.getElementById("rules-area").style.visibility='visible'; // Show the rules window
+disableWeapons("btn-c-",true);                                    // Disable computer weapons 
+disableWeapons("btn-p-",true);                                    // Disable player weapons 
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -67,10 +75,22 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             let elementId = this.getAttribute("id")
             console.log("event: click,  elementId:" + elementId + " Data="+ playerChoice );
-            if (elementId === "btn-start") {
+            if (elementId === "btn-start") {    // Start button pressed to init the game
                 startGame();
+                document.getElementById("start").style.visibility='hidden'; // hide start window
+                document.getElementById("rules-area").style.visibility='hidden'; // hide rules window
+            } else if (elementId === "btn-end") {// End button pressed to close final message
+                document.getElementById("end").style.visibility='hidden';       // hide the final window
+                document.getElementById("start").style.visibility='visible'; // show the start window
+            } else if (elementId === "btn-close-rules") {   // Button to close the rules pressed
+                document.getElementById("rules-area").style.visibility='hidden';  // hide rules window 
+                document.getElementById("btn-open-rules").style.visibility='visible';   
+            } else if (elementId === "btn-open-rules") {    // Button to open the rules pressed
+                document.getElementById("btn-open-rules").style.visibility='hidden';   
+                document.getElementById("rules-area").style.visibility='visible';   
+
             } else {
-                playerChoice = this.getAttribute("data")
+                playerChoice = this.getAttribute("data");
                 computerChoice = randomChoice();
                 playRound()
             }
@@ -84,7 +104,17 @@ function startGame(){
     computerScore=0;
     playerScore=0;
     resultMessage="Choose a weapon";
-    displayInfo();    
+    displayInfo();
+    disableWeapons("btn-p-",false);
+    document.getElementById("player-weapon-img").style.visibility='hidden';
+    document.getElementById("computer-weapon-img").style.visibility='hidden';
+}
+
+function disableWeapons(pattern, option){
+    for (let weaponKey in Object.keys(weaponChoices)) {
+        buttonName=pattern+Object.keys(weaponChoices)[weaponKey];
+        document.getElementById(buttonName).disabled=option;
+    }
 }
 
 function displayInfo(){
@@ -97,13 +127,13 @@ function displayInfo(){
     document.getElementById("result").innerHTML=resultMessage;
     if (playerChoice.length) {  // Update the player weapon image
         let imageFile="/assets/images/"+weaponChoices[playerChoice][1];
-        console.log("The Player Choose(" + playerChoice + ") newfile="+ imageFile);
+        //console.log("The Player Choose(" + playerChoice + ") newfile="+ imageFile);
         document.getElementById("player-weapon-img").src = imageFile; 
     }
     
     if (computerChoice.length) { // Update the computer weapon image
         imageFile="/assets/images/"+weaponChoices[computerChoice][1];
-        console.log("The Computer Choose(" + computerChoice + ") newfile="+ imageFile);
+        //console.log("The Computer Choose(" + computerChoice + ") newfile="+ imageFile);
         document.getElementById("computer-weapon-img").src = imageFile; 
     }
 }  
@@ -116,18 +146,24 @@ function randomChoice() {
 function playRound() {
     let outcome=checkOutcome();
     roundNumber++;
-    displayInfo()
+    document.getElementById("player-weapon-img").style.visibility='visible';
+    document.getElementById("computer-weapon-img").style.visibility='visible';
+
     if (roundNumber > totalRounds){ // All rounds played
+        roundNumber = totalRounds;  // To avoid display incorrect round number
         let finalOutcome=1; // Default to tie
         if (playerScore < computerScore){         // Player lost
             finalOutcome = 0;
-            console.log("Player lost")
+            console.log("Player lost");
         }else if (playerScore > computerScore) {  // Player won
             finalOutcome = 2;
-            console.log("Player won")
+            console.log("Player won");
         }
-        alert(finalMessages[finalOutcome]);
+        disableWeapons("btn-p-",true);                 // Disable player weapons 
+        document.getElementById("final-message").innerHTML=finalMessages[finalOutcome]
+        document.getElementById("end").style.visibility='visible';  // Shows the final screen
     }
+    displayInfo()
 }
 
 function checkOutcome() {
