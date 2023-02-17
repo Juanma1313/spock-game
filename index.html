@@ -9,12 +9,13 @@
     <title>Spock-Game</title>
 </head>
 <body>
+    <!---------------- GAME TITLE --------------->
     <header id="title-area" class="main-box pannel-border-color">
         <h1 class="center">Spock-Game</h1>
-        <button aria-label="rules button"  id="btn-rules">Rules</button>
+        
     </header>
-    
-    <section id="arena-area">   <!-- Game area-->
+     <!---------------- GAME AREA --------------->
+    <section id="arena-area">  
         <div id="pannel" class="main-box pannel-border-color">   <!-- information pannel -->
             <div id="score" class="main-box"> <!-- players names, scores, round number-->
                 <div id="round" class="round-info">Round - <span id="round-number">0</span></div>   <!-- round number-->
@@ -23,16 +24,16 @@
                     <div id="player-score" class="score-box player-colors">0</div>
                 </div>   
                 <div id="computer-info" class="player-info">    <!-- Computer information (name, score) -->
-                    <span id="computer-name">Computer</span>
+                    <span id="computer-name">Spock</span>
                     <div id="computer-score" class="score-box computer-colors">0</div>
                 </div>   
             </div>
             <div id="result" >  <!-- game results for each round and other messages to the player-->
-                Outcome Message
+                Press Start
             </div>
         </div>
         <div id="area-player" class="main-box player-colors court">  <!-- Player court -->
-            <div id="player-weapons" class="weapons">    <!-- player's buttons for weapons-->
+            <div id="player-weapons" class="weapons" >    <!-- player's buttons for weapons-->
                 <button aria-label="Player Rock button"  id="btn-p-rock" data="rock">
                     <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
                 </button>
@@ -54,7 +55,7 @@
             </div>
         </div>
         <div id="area-computer" class="main-box computer-colors court">  <!-- Computer court-->
-            <div id="computer-weapons" class="weapons">    <!-- computer's buttons for weapons-->
+            <div id="computer-weapons" class="weapons" >    <!-- computer's buttons for weapons-->
                 <button aria-label="computer rock button"  id="btn-c-rock" disabled>
                     <img src="assets/images/jmh-rock_l.png" alt="[rock_small]">
                 </button>
@@ -75,8 +76,20 @@
                 <img id="computer-weapon-img" src="assets/images/jmh-rock.png" alt="[rock-paper-scissors-lizard-spock_selection]">
             </div>
         </div>
-    </section>    
-    <section id="rules-area">
+    </section>  
+
+    <!--------START BUTTON SCREEN------->  
+    <section id="start" class="main-box pannel-border-color center" >
+        <button aria-label="start button"  id="btn-start">Start</button>
+    </section>
+    <!--------END GAME SCREEN------->  
+    <section id="end" class="main-box pannel-border-color center" >
+        <span id="final-message">Game Over</span>
+        <button aria-label="end button"  id="btn-end">New Game</button>
+    </section>
+    
+    <!--------------- RULES SCREEN -------->  
+    <section id="rules-area" class="main-box pannel-border-color center">
         <h2>GAME RULES</h2>
         <ol id="rules">
             <li>Use the start button to start the round. Your player area is red.</li>
@@ -99,18 +112,12 @@
                 <li>Rock crushes Scissors</li>
             </ul>
         </div>
-        <button aria-label="close rules"  id="btn-close-rules" data="btn-close-rules"></button>
-    </section>
-    <section id="start">
-        <button aria-label="start button"  id="btn-start">Start</button>
-    </section>
-    <section id="end">
-        <span id="final-message">Game Over</span>
-        <button aria-label="end button"  id="btn-end">New Game</button>
+        <button aria-label="close rules"  id="btn-close-rules" data="btn-close-rules"> Back to the game</button>
     </section>
 
+    <!---------FOOTER --------->  
     <footer >
-
+        <button aria-label="rules button"  id="btn-open-rules">Rules</button>
     </footer>
     <script src="assets/js/script.js"></script>
 </body>
