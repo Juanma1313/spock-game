@@ -126,12 +126,12 @@ function displayInfo(){
     document.getElementById("player-score").innerHTML=playerScore;
     document.getElementById("result").innerHTML=resultMessage;
     if (playerChoice.length) {  // Update the player weapon image
-        let imageFile="/assets/images/"+weaponChoices[playerChoice][1];
+        let imageFile="./assets/images/"+weaponChoices[playerChoice][1];
         document.getElementById("player-weapon-img").src = imageFile; 
     }
     
     if (computerChoice.length) { // Update the computer weapon image
-        let imageFile="/assets/images/"+weaponChoices[computerChoice][1];
+        let imageFile="./assets/images/"+weaponChoices[computerChoice][1];
         document.getElementById("computer-weapon-img").src = imageFile; 
     }
 }  
