@@ -1,15 +1,15 @@
 let totalRounds = 5;
 let roundNumber=0;
-let computerName="Spock"
+let computerName="Spock";
 let computerScore=0;
-let computerChoice=""
+let computerChoice="";
 
-let playerName="Player"
+let playerName="Player";
 let playerScore=0;
-let resultMessage=""
-let playerChoice=""
+let resultMessage="";
+let playerChoice="";
 
-// Dictionary with the mapping for the buttons "data" attribute , 
+// Dictionary with the mapping for the buttons "name" attribute , 
 // each key corresponds  to a button and the value is an array where:
 //      index=0 --> Weapon name,
 //      index=1 --> Weapon graphic file
@@ -44,7 +44,7 @@ const outcomeTable = [
     [[+1,    8], [-1,   7], [+1,   4], [ 0,null], [+1,   3]], // Spock
     [[-1,    2], [+1,   6], [-1,   5], [+1,   3], [ 0,null]], // Lizard
 ];
-const outcomeMessages = ["You lose","Draw", "You win "]
+const outcomeMessages = ["You lose","Draw", "You win "];
 const outcomeReasons = [
     "Scissors cuts Paper",          //0
     "Paper covers Rock",            //1
@@ -58,7 +58,7 @@ const outcomeReasons = [
     "Rock crushes Scissor"          //9
 ];     
 // Messages to be displayed at the end of the game.
-const finalMessages = ["Sorry!, You Lost","Wow!, You Tied", "Congratulations!, You Have Won!"]
+const finalMessages = ["Sorry!, You Lost","Wow!, You Tied", "Congratulations!, You Have Won!"];
 
 document.getElementById("end").style.visibility='hidden';         // hide the final window
 document.getElementById("start").style.visibility='visible';      // show the start window
@@ -70,33 +70,33 @@ disableWeapons("btn-p-",true);                                    // Disable pla
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
-        button.addEventListener("click", function() {
-            let elementId = this.getAttribute("id")
-            console.log("event: click,  elementId:" + elementId + " Data="+ playerChoice );
-            if (elementId === "btn-start") {    // Start button pressed to init the game
-                startGame();
-                document.getElementById("start").style.visibility='hidden'; // hide start window
-                document.getElementById("rules-area").style.visibility='hidden'; // hide rules window
-            } else if (elementId === "btn-end") {// End button pressed to close final message
-                document.getElementById("end").style.visibility='hidden';       // hide the final window
-                document.getElementById("start").style.visibility='visible'; // show the start window
-            } else if (elementId === "btn-close-rules") {   // Button to close the rules pressed
-                document.getElementById("rules-area").style.visibility='hidden';  // hide rules window 
-                document.getElementById("btn-open-rules").style.visibility='visible';   
-            } else if (elementId === "btn-open-rules") {    // Button to open the rules pressed
-                document.getElementById("btn-open-rules").style.visibility='hidden';   
-                document.getElementById("rules-area").style.visibility='visible';   
-
-            } else {
-                playerChoice = this.getAttribute("data");
-                computerChoice = randomChoice();
-                playRound()
-            }
-        });
+        button.addEventListener("click", eventDispatcher);
     }
 });
+
+function eventDispatcher(){
+    let elementId = this.getAttribute("id");
+    if (elementId === "btn-start") {    // Start button pressed to init the game
+        startGame();
+        document.getElementById("start").style.visibility='hidden'; // hide start window
+        document.getElementById("rules-area").style.visibility='hidden'; // hide rules window
+    } else if (elementId === "btn-end") {// End button pressed to close final message
+        document.getElementById("end").style.visibility='hidden';       // hide the final window
+        document.getElementById("start").style.visibility='visible'; // show the start window
+    } else if (elementId === "btn-close-rules") {   // Button to close the rules pressed
+        document.getElementById("rules-area").style.visibility='hidden';  // hide rules window 
+        document.getElementById("btn-open-rules").style.visibility='visible';   
+    } else if (elementId === "btn-open-rules") {    // Button to open the rules pressed
+        document.getElementById("btn-open-rules").style.visibility='hidden';   
+        document.getElementById("rules-area").style.visibility='visible';   
+
+    } else {
+        playerChoice = this.getAttribute("name");
+        computerChoice = randomChoice();
+        playRound();
+    }
+}
 
 function startGame(){
     // Reset game round counter and scores and invite the player to choose a weapon
@@ -111,8 +111,8 @@ function startGame(){
 }
 
 function disableWeapons(pattern, option){
-    for (let weaponKey in Object.keys(weaponChoices)) {
-        buttonName=pattern+Object.keys(weaponChoices)[weaponKey];
+    for (let index=0; index<Object.keys(weaponChoices).length; index++) {
+        let buttonName=pattern+Object.keys(weaponChoices)[index];
         document.getElementById(buttonName).disabled=option;
     }
 }
@@ -127,24 +127,22 @@ function displayInfo(){
     document.getElementById("result").innerHTML=resultMessage;
     if (playerChoice.length) {  // Update the player weapon image
         let imageFile="/assets/images/"+weaponChoices[playerChoice][1];
-        //console.log("The Player Choose(" + playerChoice + ") newfile="+ imageFile);
         document.getElementById("player-weapon-img").src = imageFile; 
     }
     
     if (computerChoice.length) { // Update the computer weapon image
-        imageFile="/assets/images/"+weaponChoices[computerChoice][1];
-        //console.log("The Computer Choose(" + computerChoice + ") newfile="+ imageFile);
+        let imageFile="/assets/images/"+weaponChoices[computerChoice][1];
         document.getElementById("computer-weapon-img").src = imageFile; 
     }
 }  
 
 function randomChoice() {
-    choiceNumber = Math.floor(Math.random () * Object.keys(weaponChoices).length);
+    let choiceNumber = Math.floor(Math.random () * Object.keys(weaponChoices).length);
     return(Object.keys(weaponChoices)[choiceNumber]);
 
 }
 function playRound() {
-    let outcome=checkOutcome();
+    checkOutcome();
     roundNumber++;
     document.getElementById("player-weapon-img").style.visibility='visible';
     document.getElementById("computer-weapon-img").style.visibility='visible';
@@ -154,27 +152,24 @@ function playRound() {
         let finalOutcome=1; // Default to tie
         if (playerScore < computerScore){         // Player lost
             finalOutcome = 0;
-            console.log("Player lost");
         }else if (playerScore > computerScore) {  // Player won
             finalOutcome = 2;
-            console.log("Player won");
         }
         disableWeapons("btn-p-",true);                 // Disable player weapons 
-        document.getElementById("final-message").innerHTML=finalMessages[finalOutcome]
+        document.getElementById("final-message").innerHTML=finalMessages[finalOutcome];
         document.getElementById("end").style.visibility='visible';  // Shows the final screen
     }
-    displayInfo()
+    displayInfo();
 }
 
 function checkOutcome() {
-    console.log("checkOutcome(" +")");
     let index1=weaponChoices[playerChoice][2];
     let index2=weaponChoices[computerChoice][2];
     let outcome = outcomeTable[index1][index2][0];
     let outcomeMessage=outcomeMessages[outcome+1];
     if (outcome === 0) {  // Player and computer have the same weapon, Draw
         let weaponName=  weaponChoices[playerChoice][0];
-        resultMessage = outcomeMessage+", Both have choosen " + weaponName
+        resultMessage = outcomeMessage+", Both have choosen " + weaponName;
         }
     else
        {                // Player and computer have diferent weapons
@@ -187,5 +182,5 @@ function checkOutcome() {
             playerScore++;
         }
        }
-    return (outcome)
+    return (outcome);
 }

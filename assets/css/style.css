@@ -75,7 +75,7 @@ html {
 }
 #title-area > h1{
     margin:0;
-    width:100;
+    width:100%;
     font-size: 5vw;
 }
 
@@ -217,8 +217,8 @@ html {
     position: fixed;
     height: 15%;
     margin: auto;
-    width: 30%;
-    left: 35vw;
+    width: 60%;
+    left: 20vw;
     text-align: center;
  }
  #btn-end {
@@ -249,7 +249,7 @@ html {
         width:100%;
     }
     
-
+ }
  /* media query for mobile under 550 px wide*/ 
 
  @media screen and (max-width: 550px){
