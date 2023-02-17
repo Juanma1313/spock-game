@@ -86,7 +86,9 @@ The proposed wireframe for mobile is shown below.
 
 ![wireframe for mobiles](doc/wireframe/mobile_page.png)
 
-#Features
+***
+
+# Features
 ## Existing Features
 ### The Titel
 This is just a banner with the name of the game.
@@ -128,6 +130,20 @@ The font is scaled automatically as we reduce the screen size, and when used in 
 
 ![screenshot mobile](doc/screenshots/capture-8.png)
 
+## Future Features
+### Persistent Configuration
+Data such as player names, number of rounds per game, colour settings and a host of other options could be customized and saved locally or on a server.
+
+### Time restrictions
+This feature consists of providing the application with a timer so that the player has to choose a weapon within a time limit. This will add a tension component to the game and make it more interesting.
+This application has been designed and implemented with this functionality in mind, so that its implementation does not require code or screens to be restructured.
+
+### Sounds and motion
+It is clear that a video game has a greater appeal when interesting sounds and more dynamism are added to the screen.
+
+### Network players
+This functionality is a bit more ambitious but would allow two or more human or robotic players to share the game in real time.
+
 ***
 
 # Testing
@@ -150,14 +166,6 @@ In the GitHub repository, navigate to the Settings tab
 From the source section drop-down menu, select the Master Branch
 Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 The live link can be found here - https://juanma1313.github.io/spock-game/
-
-
-
-
-
-
-
-
 
 # Credits
 ## Information and references
