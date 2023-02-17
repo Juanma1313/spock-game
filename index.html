@@ -11,6 +11,7 @@
 <body>
     <header id="title-area" class="main-box pannel-border-color">
         <h1 class="center">Spock-Game</h1>
+        <button aria-label="rules button"  id="btn-rules">Rules</button>
     </header>
     
     <section id="arena-area">   <!-- Game area-->
@@ -74,12 +75,41 @@
                 <img id="computer-weapon-img" src="assets/images/jmh-rock.png" alt="[rock-paper-scissors-lizard-spock_selection]">
             </div>
         </div>
-
     </section>    
-    <footer id="rules-area">
-        <button aria-label="start button"  id="btn-start">
-            Start
-        </button>
+    <section id="rules-area">
+        <h2>GAME RULES</h2>
+        <ol id="rules">
+            <li>Use the start button to start the round. Your player area is red.</li>
+            <li>Choose your wepon by clicking a hand posture from your play area. (Rock, Paper, Scissors, Lizard or Spock)</li>
+            <li>Your choice and the computer choice are revealed and the winer of the round ads a point to the score.</li>
+            <li>After all the rounds are compleated, the higher score wins the game.</li>
+        </ol>
+        <div id="combinations">
+            <h3>wining Combinations</h3>
+            <ul>
+                <li>Scissors cuts Paper</li>
+                <li>Paper covers Rock</li>
+                <li>Rock crushes Lizard</li>
+                <li>Lizard poisons Spock</li>
+                <li>Spock smashes Scissors</li>
+                <li>Scissors decapitates Lizard</li>
+                <li>Lizard eats Paper</li>
+                <li>Paper disproves Spock</li>
+                <li>Spock vaporizes Rock</li>
+                <li>Rock crushes Scissors</li>
+            </ul>
+        </div>
+        <button aria-label="close rules"  id="btn-close-rules" data="btn-close-rules"></button>
+    </section>
+    <section id="start">
+        <button aria-label="start button"  id="btn-start">Start</button>
+    </section>
+    <section id="end">
+        <span id="final-message">Game Over</span>
+        <button aria-label="end button"  id="btn-end">New Game</button>
+    </section>
+
+    <footer >
 
     </footer>
     <script src="assets/js/script.js"></script>
